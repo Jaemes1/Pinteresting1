@@ -1,4 +1,5 @@
 InvGators::Application.routes.draw do
+  resources :issues
   devise_for :users
   root "pages#home"
   get "about" => "pages#about" #creates about path
