@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824155142) do
+ActiveRecord::Schema.define(version: 20150214203802) do
 
   create_table "issues", force: true do |t|
     t.string   "description"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 20140824155142) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "pins", force: true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pins2s", force: true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "pins2s", ["user_id"], name: "index_pins2s_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

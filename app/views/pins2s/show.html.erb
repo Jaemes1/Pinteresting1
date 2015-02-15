@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pins2.description %>
+</p>
+
+ <% if @pins2.user == current_user %>
+	<%= link_to 'Edit', edit_pins2_path(@pins2) %> |
+<% end %>
+	<%= link_to 'Back', pins2s_path %>
